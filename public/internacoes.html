@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Internações – Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="internacoes">
+    <aside id="menu"></aside>
+    <main>
+      <header>
+        <h1>Internações</h1>
+        <p>Registre entradas e altas de pacientes.</p>
+      </header>
+      <div class="tool">
+        <input
+          type="search"
+          placeholder="Buscar por paciente ou quarto"
+        /><button class="btn">Nova internação</button>
+      </div>
+      <div class="card tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>Quarto</th>
+              <th>Entrada</th>
+              <th>Alta prevista</th>
+              <th>Alta efetiva</th>
+              <th>Status</th>
+              <th class="r">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Carlos Souza</td>
+              <td>204</td>
+              <td>10/10/2026</td>
+              <td>16/10/2026</td>
+              <td>—</td>
+              <td><span class="tag warn">Ativa</span></td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Rafael Teixeira</td>
+              <td>101</td>
+              <td>01/10/2026</td>
+              <td>05/10/2026</td>
+              <td>05/10/2026</td>
+              <td><span class="tag ok">Alta</span></td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <form class="card">
+        <h2>Registrar internação</h2>
+        <div class="grid">
+          <label
+            >Paciente<select>
+              <option>Selecione</option>
+              <option>Marina Alves</option>
+              <option>Carlos Souza</option>
+              <option>Helena Prado</option>
+              <option>Rafael Teixeira</option>
+            </select></label
+          ><label
+            >Profissional responsável<select>
+              <option>Selecione</option>
+              <option>Dra. Paula Mendes – Cardiologia</option>
+              <option>Dr. André Lima – Ortopedia</option>
+              <option>Dra. Júlia Rocha – Pediatria</option>
+            </select></label
+          ><label
+            >Quarto<select>
+              <option>Selecione</option>
+              <option>101</option>
+              <option>102</option>
+              <option>204</option>
+            </select></label
+          ><label>Data de entrada<input type="date" /></label
+          ><label>Data prevista de alta<input type="date" /></label
+          ><label>Data efetiva de alta<input type="date" /></label
+          ><label class="full">Observações<textarea rows="3"></textarea></label>
+        </div>
+        <div class="bar">
+          <button type="button" class="btn ghost">Cancelar</button
+          ><button type="button" class="btn">Salvar internação</button>
+        </div>
+      </form>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

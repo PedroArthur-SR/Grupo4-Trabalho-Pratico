@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pacientes – Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="pacientes">
+    <aside id="menu"></aside>
+    <main>
+      <header>
+        <h1>Pacientes</h1>
+        <p>Cadastre e consulte os pacientes do hospital.</p>
+      </header>
+      <div class="tool">
+        <input type="search" placeholder="Buscar por nome ou CPF" /><button
+          class="btn"
+        >
+          Novo paciente
+        </button>
+      </div>
+      <div class="card tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Nascimento</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th class="r">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Marina Alves</td>
+              <td>123.456.789-00</td>
+              <td>12/03/1985</td>
+              <td>(31) 99999-0001</td>
+              <td>marina@email.com</td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Carlos Souza</td>
+              <td>234.567.890-11</td>
+              <td>04/09/1972</td>
+              <td>(31) 99999-0002</td>
+              <td>carlos@email.com</td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Helena Prado</td>
+              <td>345.678.901-22</td>
+              <td>25/12/1990</td>
+              <td>(31) 99999-0003</td>
+              <td>helena@email.com</td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <form class="card">
+        <h2>Dados do paciente</h2>
+        <div class="grid">
+          <label class="full">Nome completo<input type="text" /></label
+          ><label>CPF<input type="text" /></label
+          ><label>Data de nascimento<input type="date" /></label
+          ><label>Telefone<input type="tel" /></label
+          ><label>E-mail<input type="email" /></label
+          ><label class="full">Logradouro<input type="text" /></label
+          ><label>Número<input type="text" /></label
+          ><label>Bairro<input type="text" /></label
+          ><label>Cidade<input type="text" /></label
+          ><label
+            >Estado<select>
+              <option>Selecione</option>
+              <option>MG</option>
+              <option>SP</option>
+              <option>RJ</option>
+            </select></label
+          ><label>CEP<input type="text" /></label>
+        </div>
+        <div class="bar">
+          <button type="button" class="btn ghost">Cancelar</button
+          ><button type="button" class="btn">Salvar paciente</button>
+        </div>
+      </form>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
