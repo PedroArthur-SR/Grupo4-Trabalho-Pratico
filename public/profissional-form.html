@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Profissional - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html" class="active">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="breadcrumb"><a href="profissionais.html">Profissionais</a> / Novo</p>
+        <h1>Cadastro de Profissional da Saúde</h1>
+      </div>
+    </div>
+
+    <form class="card">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="nome">Nome completo <span class="required">*</span></label>
+          <input type="text" id="nome" placeholder="Ex.: Carlos Lima">
+        </div>
+        <div class="field">
+          <label for="registro">Registro profissional <span class="required">*</span></label>
+          <input type="text" id="registro" placeholder="Ex.: CRM-MG 45678">
+          <span class="hint">CRM, COREN, CRF etc. Deve ser único.</span>
+        </div>
+        <div class="field">
+          <label for="especialidade">Especialidade <span class="required">*</span></label>
+          <select id="especialidade">
+            <option value="">Selecione...</option>
+            <option>Cardiologia</option>
+            <option>Clínica Geral</option>
+            <option>Ortopedia</option>
+            <option>Pediatria</option>
+            <option>Neurologia</option>
+            <option>Enfermagem</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone <span class="required">*</span></label>
+          <input type="tel" id="telefone" placeholder="(31) 90000-0000">
+        </div>
+        <div class="field">
+          <label for="email">E-mail <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="nome@hospital.com">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="profissionais.html" class="btn">Cancelar</a>
+        <button type="button" class="btn btn-primary">Salvar profissional</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

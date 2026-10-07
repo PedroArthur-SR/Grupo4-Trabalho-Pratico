@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico Médico - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html" class="active">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <h1>Histórico Médico</h1>
+        <p class="subtitle">Consultas e internações do paciente</p>
+      </div>
+    </div>
+
+    <form class="toolbar">
+      <input type="search" placeholder="Buscar paciente por nome ou CPF" value="Ana Souza">
+      <button type="button" class="btn">Buscar</button>
+    </form>
+
+    <section class="card">
+      <h2 class="section-title">Ana Souza</h2>
+      <dl class="patient-info">
+        <div><dt>CPF</dt><dd>123.456.789-00</dd></div>
+        <div><dt>Data de nascimento</dt><dd>12/03/1990 (36 anos)</dd></div>
+        <div><dt>Telefone</dt><dd>(31) 99876-5432</dd></div>
+        <div><dt>E-mail</dt><dd>ana.souza@email.com</dd></div>
+        <div><dt>Endereço</dt><dd>Rua das Flores, 120 - Belo Horizonte/MG</dd></div>
+      </dl>
+    </section>
+
+    <section class="card">
+      <div class="tabs">
+        <span class="tab active">Todos (4)</span>
+        <span class="tab">Consultas (3)</span>
+        <span class="tab">Internações (1)</span>
+      </div>
+
+      <ul class="timeline">
+        <li>
+          <div class="date">07/10/2026 · 14:00 · Consulta</div>
+          <h3>Check-up cardíaco <span class="badge badge-info">Agendada</span></h3>
+          <p>Dr. Carlos Lima (Cardiologia)</p>
+        </li>
+        <li class="internacao">
+          <div class="date">10/08/2026 a 14/08/2026 · Internação · Quarto 204</div>
+          <h3>Pneumonia <span class="badge badge-ok">Alta</span></h3>
+          <p>Dra. Marina Alves (Clínica Geral). Tratamento com antibiótico venoso, boa evolução. Alta prevista para 15/08, antecipada para 14/08.</p>
+        </li>
+        <li>
+          <div class="date">08/08/2026 · 10:00 · Consulta</div>
+          <h3>Febre e tosse <span class="badge badge-ok">Realizada</span></h3>
+          <p>Dra. Marina Alves (Clínica Geral). Raio-X solicitado; paciente encaminhada para internação.</p>
+        </li>
+        <li>
+          <div class="date">15/03/2026 · 09:30 · Consulta</div>
+          <h3>Consulta de rotina <span class="badge badge-ok">Realizada</span></h3>
+          <p>Dra. Marina Alves (Clínica Geral). Exames dentro da normalidade.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

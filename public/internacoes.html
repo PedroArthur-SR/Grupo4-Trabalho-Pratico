@@ -1,101 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Internações – Sistema Hospitalar</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body data-page="internacoes">
-    <aside id="menu"></aside>
-    <main>
-      <header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internações - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html" class="active">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
         <h1>Internações</h1>
-        <p>Registre entradas e altas de pacientes.</p>
-      </header>
-      <div class="tool">
-        <input
-          type="search"
-          placeholder="Buscar por paciente ou quarto"
-        /><button class="btn">Nova internação</button>
+        <p class="subtitle">Controle de pacientes internados e altas</p>
       </div>
-      <div class="card tw">
+      <a href="internacao-form.html" class="btn btn-primary">+ Nova internação</a>
+    </div>
+
+    <section class="card">
+      <form class="toolbar">
+        <input type="search" placeholder="Buscar por paciente ou quarto">
+        <select>
+          <option>Todas</option>
+          <option>Ativas</option>
+          <option>Com alta</option>
+        </select>
+        <button type="button" class="btn">Buscar</button>
+      </form>
+
+      <div class="table-wrap">
         <table>
           <thead>
-            <tr>
-              <th>Paciente</th>
-              <th>Quarto</th>
-              <th>Entrada</th>
-              <th>Alta prevista</th>
-              <th>Alta efetiva</th>
-              <th>Status</th>
-              <th class="r">Ações</th>
-            </tr>
+            <tr><th>Paciente</th><th>Profissional</th><th>Quarto</th><th>Entrada</th><th>Alta prevista</th><th>Alta efetiva</th><th>Status</th><th>Ações</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>Carlos Souza</td>
-              <td>204</td>
-              <td>10/10/2026</td>
-              <td>16/10/2026</td>
-              <td>—</td>
-              <td><span class="tag warn">Ativa</span></td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
+              <td>Lucas Ferreira</td><td>Dr. Carlos Lima</td><td>203</td><td>01/10/2026</td><td>07/10/2026</td><td>—</td>
+              <td><span class="badge badge-warn">Internado</span></td>
+              <td class="actions"><a href="internacao-form.html" class="btn btn-sm">Editar</a><button class="btn btn-sm">Dar alta</button></td>
             </tr>
             <tr>
-              <td>Rafael Teixeira</td>
-              <td>101</td>
-              <td>01/10/2026</td>
-              <td>05/10/2026</td>
-              <td>05/10/2026</td>
-              <td><span class="tag ok">Alta</span></td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
+              <td>Maria Oliveira</td><td>Dra. Marina Alves</td><td>105</td><td>03/10/2026</td><td>07/10/2026</td><td>—</td>
+              <td><span class="badge badge-warn">Internado</span></td>
+              <td class="actions"><a href="internacao-form.html" class="btn btn-sm">Editar</a><button class="btn btn-sm">Dar alta</button></td>
+            </tr>
+            <tr>
+              <td>Carlos Teixeira</td><td>Dr. Rafael Costa</td><td>210</td><td>05/10/2026</td><td>12/10/2026</td><td>—</td>
+              <td><span class="badge badge-warn">Internado</span></td>
+              <td class="actions"><a href="internacao-form.html" class="btn btn-sm">Editar</a><button class="btn btn-sm">Dar alta</button></td>
+            </tr>
+            <tr>
+              <td>Rita Gomes</td><td>Dra. Marina Alves</td><td>310</td><td>30/09/2026</td><td>06/10/2026</td><td>07/10/2026</td>
+              <td><span class="badge badge-ok">Alta</span></td>
+              <td class="actions"><a href="internacao-form.html" class="btn btn-sm">Ver</a></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <form class="card">
-        <h2>Registrar internação</h2>
-        <div class="grid">
-          <label
-            >Paciente<select>
-              <option>Selecione</option>
-              <option>Marina Alves</option>
-              <option>Carlos Souza</option>
-              <option>Helena Prado</option>
-              <option>Rafael Teixeira</option>
-            </select></label
-          ><label
-            >Profissional responsável<select>
-              <option>Selecione</option>
-              <option>Dra. Paula Mendes – Cardiologia</option>
-              <option>Dr. André Lima – Ortopedia</option>
-              <option>Dra. Júlia Rocha – Pediatria</option>
-            </select></label
-          ><label
-            >Quarto<select>
-              <option>Selecione</option>
-              <option>101</option>
-              <option>102</option>
-              <option>204</option>
-            </select></label
-          ><label>Data de entrada<input type="date" /></label
-          ><label>Data prevista de alta<input type="date" /></label
-          ><label>Data efetiva de alta<input type="date" /></label
-          ><label class="full">Observações<textarea rows="3"></textarea></label>
-        </div>
-        <div class="bar">
-          <button type="button" class="btn ghost">Cancelar</button
-          ><button type="button" class="btn">Salvar internação</button>
-        </div>
-      </form>
-    </main>
-    <script src="js/script.js"></script>
-  </body>
+
+      <div class="pagination">
+        <span>Mostrando 1 a 4 de 54 internações ativas</span>
+        <div class="actions"><button class="btn btn-sm">Anterior</button><button class="btn btn-sm">Próxima</button></div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>

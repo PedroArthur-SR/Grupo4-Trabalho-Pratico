@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Internação - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html" class="active">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="breadcrumb"><a href="internacoes.html">Internações</a> / Nova</p>
+        <h1>Nova Internação</h1>
+      </div>
+    </div>
+
+    <form class="card">
+      <div class="alert alert-warn">
+        Apenas quartos com leitos livres aparecem na lista. Um quarto não pode ultrapassar sua capacidade máxima.
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="paciente">Paciente <span class="required">*</span></label>
+          <select id="paciente">
+            <option value="">Selecione o paciente...</option>
+            <option>Ana Souza - 123.456.789-00</option>
+            <option>João Pereira - 987.654.321-00</option>
+            <option>Beatriz Rocha - 456.789.123-00</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="profissional">Profissional responsável <span class="required">*</span></label>
+          <select id="profissional">
+            <option value="">Selecione o profissional...</option>
+            <option>Dr. Carlos Lima - Cardiologia</option>
+            <option>Dra. Marina Alves - Clínica Geral</option>
+            <option>Dr. Rafael Costa - Ortopedia</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="quarto">Quarto <span class="required">*</span></label>
+          <select id="quarto">
+            <option value="">Selecione o quarto...</option>
+            <option>101 - 1º andar (1 de 2 leitos livres)</option>
+            <option>204 - 2º andar (2 de 4 leitos livres)</option>
+            <option>305 - 3º andar (1 de 1 leito livre)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="entrada">Data de entrada <span class="required">*</span></label>
+          <input type="date" id="entrada">
+        </div>
+        <div class="field">
+          <label for="prevista">Data prevista de alta <span class="required">*</span></label>
+          <input type="date" id="prevista">
+        </div>
+        <div class="field">
+          <label for="efetiva">Data efetiva de alta</label>
+          <input type="date" id="efetiva">
+          <span class="hint">Preenchida apenas quando o paciente recebe alta.</span>
+        </div>
+        <div class="field full">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" placeholder="Motivo da internação, condutas, evolução do paciente"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="internacoes.html" class="btn">Cancelar</a>
+        <button type="button" class="btn btn-primary">Registrar internação</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

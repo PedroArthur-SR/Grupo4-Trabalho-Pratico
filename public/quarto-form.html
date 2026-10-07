@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Quarto - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html" class="active">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="breadcrumb"><a href="quartos.html">Quartos</a> / Novo</p>
+        <h1>Cadastro de Quarto</h1>
+      </div>
+    </div>
+
+    <form class="card">
+      <div class="form-grid">
+        <div class="field">
+          <label for="numero">Número de identificação <span class="required">*</span></label>
+          <input type="text" id="numero" placeholder="Ex.: 204">
+        </div>
+        <div class="field">
+          <label for="andar">Andar <span class="required">*</span></label>
+          <input type="number" id="andar" min="0" placeholder="Ex.: 2">
+        </div>
+        <div class="field">
+          <label for="capacidade">Capacidade máxima de pacientes <span class="required">*</span></label>
+          <input type="number" id="capacidade" min="1" placeholder="Ex.: 4">
+        </div>
+        <div class="field">
+          <label for="situacao">Situação atual</label>
+          <select id="situacao" disabled>
+            <option>Disponível</option>
+            <option>Ocupado</option>
+          </select>
+          <span class="hint">Definida automaticamente pela ocupação do quarto.</span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="quartos.html" class="btn">Cancelar</a>
+        <button type="button" class="btn btn-primary">Salvar quarto</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

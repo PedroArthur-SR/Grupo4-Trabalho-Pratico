@@ -1,101 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pacientes – Sistema Hospitalar</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body data-page="pacientes">
-    <aside id="menu"></aside>
-    <main>
-      <header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacientes - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html" class="active">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
         <h1>Pacientes</h1>
-        <p>Cadastre e consulte os pacientes do hospital.</p>
-      </header>
-      <div class="tool">
-        <input type="search" placeholder="Buscar por nome ou CPF" /><button
-          class="btn"
-        >
-          Novo paciente
-        </button>
+        <p class="subtitle">Cadastro e consulta de pacientes</p>
       </div>
-      <div class="card tw">
+      <a href="paciente-form.html" class="btn btn-primary">+ Novo paciente</a>
+    </div>
+
+    <section class="card">
+      <form class="toolbar">
+        <input type="search" placeholder="Buscar por nome, CPF ou e-mail">
+        <button type="button" class="btn">Buscar</button>
+      </form>
+
+      <div class="table-wrap">
         <table>
           <thead>
-            <tr>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th>Nascimento</th>
-              <th>Telefone</th>
-              <th>E-mail</th>
-              <th class="r">Ações</th>
-            </tr>
+            <tr><th>Nome</th><th>CPF</th><th>Nascimento</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>Marina Alves</td>
-              <td>123.456.789-00</td>
-              <td>12/03/1985</td>
-              <td>(31) 99999-0001</td>
-              <td>marina@email.com</td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
+              <td>Ana Souza</td><td>123.456.789-00</td><td>12/03/1990</td><td>(31) 99876-5432</td><td>ana.souza@email.com</td>
+              <td class="actions"><a href="historico.html" class="btn btn-sm">Histórico</a><a href="paciente-form.html" class="btn btn-sm">Editar</a></td>
             </tr>
             <tr>
-              <td>Carlos Souza</td>
-              <td>234.567.890-11</td>
-              <td>04/09/1972</td>
-              <td>(31) 99999-0002</td>
-              <td>carlos@email.com</td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
+              <td>João Pereira</td><td>987.654.321-00</td><td>25/07/1985</td><td>(31) 98765-1234</td><td>joao.p@email.com</td>
+              <td class="actions"><a href="historico.html" class="btn btn-sm">Histórico</a><a href="paciente-form.html" class="btn btn-sm">Editar</a></td>
             </tr>
             <tr>
-              <td>Helena Prado</td>
-              <td>345.678.901-22</td>
-              <td>25/12/1990</td>
-              <td>(31) 99999-0003</td>
-              <td>helena@email.com</td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
+              <td>Beatriz Rocha</td><td>456.789.123-00</td><td>02/11/2001</td><td>(31) 99111-2233</td><td>bia.rocha@email.com</td>
+              <td class="actions"><a href="historico.html" class="btn btn-sm">Histórico</a><a href="paciente-form.html" class="btn btn-sm">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Lucas Ferreira</td><td>321.654.987-00</td><td>18/05/1972</td><td>(31) 98222-3344</td><td>lucas.f@email.com</td>
+              <td class="actions"><a href="historico.html" class="btn btn-sm">Histórico</a><a href="paciente-form.html" class="btn btn-sm">Editar</a></td>
+            </tr>
+            <tr>
+              <td>Maria Oliveira</td><td>654.321.987-00</td><td>09/09/1964</td><td>(31) 99333-4455</td><td>maria.o@email.com</td>
+              <td class="actions"><a href="historico.html" class="btn btn-sm">Histórico</a><a href="paciente-form.html" class="btn btn-sm">Editar</a></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <form class="card">
-        <h2>Dados do paciente</h2>
-        <div class="grid">
-          <label class="full">Nome completo<input type="text" /></label
-          ><label>CPF<input type="text" /></label
-          ><label>Data de nascimento<input type="date" /></label
-          ><label>Telefone<input type="tel" /></label
-          ><label>E-mail<input type="email" /></label
-          ><label class="full">Logradouro<input type="text" /></label
-          ><label>Número<input type="text" /></label
-          ><label>Bairro<input type="text" /></label
-          ><label>Cidade<input type="text" /></label
-          ><label
-            >Estado<select>
-              <option>Selecione</option>
-              <option>MG</option>
-              <option>SP</option>
-              <option>RJ</option>
-            </select></label
-          ><label>CEP<input type="text" /></label>
-        </div>
-        <div class="bar">
-          <button type="button" class="btn ghost">Cancelar</button
-          ><button type="button" class="btn">Salvar paciente</button>
-        </div>
-      </form>
-    </main>
-    <script src="js/script.js"></script>
-  </body>
+
+      <div class="pagination">
+        <span>Mostrando 1 a 5 de 1.248 pacientes</span>
+        <div class="actions"><button class="btn btn-sm">Anterior</button><button class="btn btn-sm">Próxima</button></div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>

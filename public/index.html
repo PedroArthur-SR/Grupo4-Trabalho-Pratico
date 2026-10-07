@@ -1,71 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Painel – Sistema Hospitalar</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body data-page="index">
-    <aside id="menu"></aside>
-    <main>
-      <header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html" class="active">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
         <h1>Painel</h1>
-        <p>Resumo do dia no hospital.</p>
-      </header>
-      <div class="stats">
-        <div class="card st"><b>18</b><span>Consultas hoje</span></div>
-        <div class="card st"><b>7</b><span>Pacientes internados</span></div>
-        <div class="card st"><b>5</b><span>Quartos disponíveis</span></div>
-        <div class="card st"><b>12</b><span>Profissionais ativos</span></div>
+        <p class="subtitle">Visão geral do hospital hoje, 07/10/2026</p>
       </div>
-      <h2 class="sec">Próximas consultas</h2>
-      <div class="card tw">
-        <table>
-          <thead>
-            <tr>
-              <th>Horário</th>
-              <th>Paciente</th>
-              <th>Profissional</th>
-              <th>Status</th>
-              <th class="r">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>08:00</td>
-              <td>Marina Alves</td>
-              <td>Dra. Paula Mendes – Cardiologia</td>
-              <td><span class="tag warn">Agendada</span></td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>09:30</td>
-              <td>Carlos Souza</td>
-              <td>Dr. André Lima – Ortopedia</td>
-              <td><span class="tag warn">Agendada</span></td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>10:15</td>
-              <td>Helena Prado</td>
-              <td>Dra. Júlia Rocha – Pediatria</td>
-              <td><span class="tag warn">Agendada</span></td>
-              <td class="r">
-                <button class="lnk">Editar</button
-                ><button class="lnk dg">Excluir</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="actions">
+        <a href="consulta-form.html" class="btn btn-primary">+ Agendar consulta</a>
+        <a href="internacao-form.html" class="btn">+ Nova internação</a>
       </div>
-    </main>
-    <script src="js/script.js"></script>
-  </body>
+    </div>
+
+    <section class="stats">
+      <div class="card stat">
+        <div class="label">Pacientes cadastrados</div>
+        <div class="value">1.248</div>
+      </div>
+      <div class="card stat">
+        <div class="label">Consultas hoje</div>
+        <div class="value">37</div>
+        <div class="hint">12 já realizadas</div>
+      </div>
+      <div class="card stat">
+        <div class="label">Internações ativas</div>
+        <div class="value">54</div>
+      </div>
+      <div class="card stat">
+        <div class="label">Leitos livres</div>
+        <div class="value">18</div>
+        <div class="hint">de 72 leitos no total</div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="card">
+        <h2 class="section-title">Próximas consultas</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Horário</th><th>Paciente</th><th>Profissional</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>14:00</td><td>Ana Souza</td><td>Dr. Carlos Lima</td><td><span class="badge badge-info">Agendada</span></td></tr>
+              <tr><td>14:30</td><td>João Pereira</td><td>Dra. Marina Alves</td><td><span class="badge badge-info">Agendada</span></td></tr>
+              <tr><td>15:00</td><td>Beatriz Rocha</td><td>Dr. Carlos Lima</td><td><span class="badge badge-info">Agendada</span></td></tr>
+              <tr><td>15:30</td><td>Pedro Martins</td><td>Dr. Rafael Costa</td><td><span class="badge badge-info">Agendada</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Altas previstas para hoje</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Paciente</th><th>Quarto</th><th>Entrada</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Lucas Ferreira</td><td>203</td><td>01/10/2026</td><td><span class="badge badge-warn">Alta prevista</span></td></tr>
+              <tr><td>Maria Oliveira</td><td>105</td><td>03/10/2026</td><td><span class="badge badge-warn">Alta prevista</span></td></tr>
+              <tr><td>Rita Gomes</td><td>310</td><td>30/09/2026</td><td><span class="badge badge-ok">Alta realizada</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
 </html>

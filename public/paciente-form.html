@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Paciente - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html" class="active">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <p class="breadcrumb"><a href="pacientes.html">Pacientes</a> / Novo</p>
+        <h1>Cadastro de Paciente</h1>
+      </div>
+    </div>
+
+    <form class="card">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="nome">Nome completo <span class="required">*</span></label>
+          <input type="text" id="nome" placeholder="Ex.: Ana Souza">
+        </div>
+        <div class="field">
+          <label for="cpf">CPF <span class="required">*</span></label>
+          <input type="text" id="cpf" placeholder="000.000.000-00">
+          <span class="hint">O CPF deve ser único no sistema.</span>
+        </div>
+        <div class="field">
+          <label for="nascimento">Data de nascimento <span class="required">*</span></label>
+          <input type="date" id="nascimento">
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone <span class="required">*</span></label>
+          <input type="tel" id="telefone" placeholder="(31) 90000-0000">
+        </div>
+        <div class="field">
+          <label for="email">E-mail <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="nome@email.com">
+        </div>
+        <div class="field full">
+          <label for="endereco">Endereço <span class="required">*</span></label>
+          <input type="text" id="endereco" placeholder="Rua, número, bairro, cidade - UF">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="pacientes.html" class="btn">Cancelar</a>
+        <button type="button" class="btn btn-primary">Salvar paciente</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

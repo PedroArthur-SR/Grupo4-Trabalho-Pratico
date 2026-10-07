@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quartos - Sistema Hospitalar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div>SIH<small>Sistema Hospitalar</small></div></div>
+    <nav>
+      <a href="index.html">Painel</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="profissionais.html">Profissionais</a>
+      <a href="consultas.html">Consultas</a>
+      <a href="internacoes.html">Internações</a>
+      <a href="quartos.html" class="active">Quartos</a>
+      <a href="historico.html">Histórico Médico</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div>
+        <h1>Quartos</h1>
+        <p class="subtitle">Ocupação e capacidade dos quartos</p>
+      </div>
+      <a href="quarto-form.html" class="btn btn-primary">+ Novo quarto</a>
+    </div>
+
+    <form class="toolbar">
+      <select>
+        <option>Todos os andares</option>
+        <option>1º andar</option>
+        <option>2º andar</option>
+        <option>3º andar</option>
+      </select>
+      <select>
+        <option>Todas as situações</option>
+        <option>Disponível</option>
+        <option>Ocupado</option>
+      </select>
+    </form>
+
+    <section class="rooms">
+      <div class="room">
+        <div class="room-header"><span class="room-number">101</span><span class="badge badge-ok">Disponível</span></div>
+        <div class="hint">1º andar</div>
+        <div class="bar"><span style="width: 50%"></span></div>
+        <div class="hint">1 de 2 leitos ocupados</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">105</span><span class="badge badge-danger">Ocupado</span></div>
+        <div class="hint">1º andar</div>
+        <div class="bar"><span class="full" style="width: 100%"></span></div>
+        <div class="hint">2 de 2 leitos ocupados</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">203</span><span class="badge badge-danger">Ocupado</span></div>
+        <div class="hint">2º andar</div>
+        <div class="bar"><span class="full" style="width: 100%"></span></div>
+        <div class="hint">1 de 1 leito ocupado</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">204</span><span class="badge badge-ok">Disponível</span></div>
+        <div class="hint">2º andar</div>
+        <div class="bar"><span style="width: 50%"></span></div>
+        <div class="hint">2 de 4 leitos ocupados</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">210</span><span class="badge badge-ok">Disponível</span></div>
+        <div class="hint">2º andar</div>
+        <div class="bar"><span style="width: 33%"></span></div>
+        <div class="hint">1 de 3 leitos ocupados</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">305</span><span class="badge badge-ok">Disponível</span></div>
+        <div class="hint">3º andar</div>
+        <div class="bar"><span style="width: 0%"></span></div>
+        <div class="hint">0 de 1 leito ocupado</div>
+      </div>
+      <div class="room">
+        <div class="room-header"><span class="room-number">310</span><span class="badge badge-ok">Disponível</span></div>
+        <div class="hint">3º andar</div>
+        <div class="bar"><span style="width: 0%"></span></div>
+        <div class="hint">0 de 2 leitos ocupados</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
