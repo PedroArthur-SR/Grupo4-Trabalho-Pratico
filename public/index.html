@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel – Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="index">
+    <aside id="menu"></aside>
+    <main>
+      <header>
+        <h1>Painel</h1>
+        <p>Resumo do dia no hospital.</p>
+      </header>
+      <div class="stats">
+        <div class="card st"><b>18</b><span>Consultas hoje</span></div>
+        <div class="card st"><b>7</b><span>Pacientes internados</span></div>
+        <div class="card st"><b>5</b><span>Quartos disponíveis</span></div>
+        <div class="card st"><b>12</b><span>Profissionais ativos</span></div>
+      </div>
+      <h2 class="sec">Próximas consultas</h2>
+      <div class="card tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Paciente</th>
+              <th>Profissional</th>
+              <th>Status</th>
+              <th class="r">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00</td>
+              <td>Marina Alves</td>
+              <td>Dra. Paula Mendes – Cardiologia</td>
+              <td><span class="tag warn">Agendada</span></td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>09:30</td>
+              <td>Carlos Souza</td>
+              <td>Dr. André Lima – Ortopedia</td>
+              <td><span class="tag warn">Agendada</span></td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>10:15</td>
+              <td>Helena Prado</td>
+              <td>Dra. Júlia Rocha – Pediatria</td>
+              <td><span class="tag warn">Agendada</span></td>
+              <td class="r">
+                <button class="lnk">Editar</button
+                ><button class="lnk dg">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
