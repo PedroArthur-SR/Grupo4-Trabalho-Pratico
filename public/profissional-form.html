@@ -59,6 +59,36 @@
           <label for="email">E-mail <span class="required">*</span></label>
           <input type="email" id="email" placeholder="nome@hospital.com">
         </div>
+        <div class="field full">
+          <label>Disponibilidade de atendimento</label>
+          <div class="form-grid">
+            <div class="field">
+              <label for="dia">Dia da semana</label>
+              <select id="dia">
+                <option>Segunda-feira</option>
+                <option>Terça-feira</option>
+                <option>Quarta-feira</option>
+                <option>Quinta-feira</option>
+                <option>Sexta-feira</option>
+                <option>Sábado</option>
+                <option>Domingo</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="hora-inicio">Hora de início</label>
+              <input type="time" id="hora-inicio">
+            </div>
+            <div class="field">
+              <label for="hora-fim">Hora de término</label>
+              <input type="time" id="hora-fim">
+            </div>
+            <div class="field">
+              <label>&nbsp;</label>
+              <button type="button" class="btn">+ Adicionar horário</button>
+            </div>
+          </div>
+          <span class="hint">Consultas só podem ser agendadas dentro desses horários.</span>
+        </div>
       </div>
 
       <div class="form-actions">
