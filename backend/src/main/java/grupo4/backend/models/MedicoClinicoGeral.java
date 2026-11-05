@@ -1,7 +1,10 @@
 package grupo4.backend.models;
+
 import jakarta.persistence.Entity;
-@Entity 
+
+@Entity
 public class MedicoClinicoGeral extends ProfissionalSaude {
+
     protected MedicoClinicoGeral() {
     }
 
@@ -10,11 +13,15 @@ public class MedicoClinicoGeral extends ProfissionalSaude {
             String registroProfissional,
             String telefone,
             String email) {
-                super(nome, registroProfissional, telefone, email);
-            }
+
+        super(nome, registroProfissional, telefone, email);
+    }
+
     public void registrarConsulta(ConsultaRotina consulta) {
         if (consulta == null) {
-            throw new IllegalArgumentException("A consulta não pode ser nula.");
+            throw new IllegalArgumentException(
+                "A consulta não pode ser nula."
+            );
         }
 
         consulta.setProfissionalResponsavel(this);
@@ -24,17 +31,12 @@ public class MedicoClinicoGeral extends ProfissionalSaude {
             throw new IllegalArgumentException("Consulta inválida.");
         }
     }
-    public void atenderEspecialidade(ConsultaEspecializada consulta) {
-        if (consulta == null) {
-            throw new IllegalArgumentException("A consulta não pode ser nula.");
-        }
 
-        consulta.setProfissionalResponsavel(this);
-
-        if (!consulta.validarCondicoes()) {
-            consulta.setProfissionalResponsavel(null);
-            throw new IllegalArgumentException("Consulta especializada inválida.");
+    public void encaminharPaciente(Paciente paciente) {
+        if (paciente == null) {
+            throw new IllegalArgumentException(
+                "O paciente não pode ser nulo."
+            );
         }
     }
-    
 }
