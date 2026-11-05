@@ -35,6 +35,26 @@ public class HistoricoMedico {
         informacoesRelevantes.add(info);
     }
 
+    public void adicionarConsulta(Consulta consulta) {
+        if (consulta == null) {
+            throw new IllegalArgumentException(
+                "A consulta não pode ser nula."
+            );
+        }
+
+        consultas.add(consulta);
+    }
+
+    public void adicionarInternacao(Internacao internacao) {
+        if (internacao == null) {
+            throw new IllegalArgumentException(
+                "A internação não pode ser nula."
+            );
+        }
+
+        internacoes.add(internacao);
+    }
+
     public List<Consulta> listarConsultas() {
         return consultas;
     }

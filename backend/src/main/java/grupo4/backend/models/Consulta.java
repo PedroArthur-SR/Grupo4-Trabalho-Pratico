@@ -48,16 +48,24 @@ public abstract class Consulta extends Atendimento{
     }
     public void realizar(String observacoes) {
         if (statusConsulta != StatusConsulta.EM_ATENDIMENTO) {
-            throw new IllegalStateException("A consulta não está em atendimento.");
+            throw new IllegalStateException(
+                "A consulta não está em atendimento."
+            );
         }
 
         if (observacoes == null || observacoes.isBlank()) {
-            throw new IllegalArgumentException("As observações são obrigatórias.");
+            throw new IllegalArgumentException(
+                "As observações são obrigatórias."
+            );
         }
 
-        if (alterarStatus(StatusConsulta.CONCLUIDA)) {
-            this.observacoesMedicas = observacoes;
+        if (!alterarStatus(StatusConsulta.CONCLUIDA)) {
+            throw new IllegalStateException(
+                "Não foi possível concluir a consulta."
+            );
         }
+
+        this.observacoesMedicas = observacoes;
     }
 
 

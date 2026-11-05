@@ -52,12 +52,17 @@ public class ProcedimentoCirurgico extends Atendimento {
         this.cirurgiaoResponsavel = cirurgiaoResponsavel;
 
         setPaciente(paciente);
+            if (!validarCondicoes()) {
+            throw new IllegalArgumentException(
+                "Dados inválidos para procedimento cirúrgico."
+            );
+    }
     }
 
-    public void iniciarProcedimento() {
-        if (statusProcedimento != StatusProcedimento.AGENDADO) {
+    public void iniciar() {
+        if (!statusProcedimento.podeMudarPara(StatusProcedimento.EM_ANDAMENTO)) {
             throw new IllegalStateException(
-                "O procedimento não está agendado."
+                "Não foi possível iniciar o procedimento."
             );
         }
 
@@ -67,8 +72,8 @@ public class ProcedimentoCirurgico extends Atendimento {
         horarioRealizado = LocalTime.now();
     }
 
-    public void concluirProcedimento(String observacoesPosOperatorias) {
-        if (statusProcedimento != StatusProcedimento.EM_ANDAMENTO) {
+    public void concluir(String observacoesPosOperatorias) {
+        if (!statusProcedimento.podeMudarPara(StatusProcedimento.CONCLUIDO)) {
             throw new IllegalStateException(
                 "O procedimento precisa estar em andamento para ser concluído."
             );
@@ -85,8 +90,8 @@ public class ProcedimentoCirurgico extends Atendimento {
         statusProcedimento = StatusProcedimento.CONCLUIDO;
     }
 
-    public void cancelarProcedimento() {
-        if (statusProcedimento != StatusProcedimento.AGENDADO) {
+    public void cancelar() {
+        if (!statusProcedimento.podeMudarPara(StatusProcedimento.CANCELADO)) {
             throw new IllegalStateException(
                 "Somente procedimentos agendados podem ser cancelados."
             );

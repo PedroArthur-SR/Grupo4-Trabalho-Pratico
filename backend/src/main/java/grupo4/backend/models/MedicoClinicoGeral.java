@@ -12,5 +12,29 @@ public class MedicoClinicoGeral extends ProfissionalSaude {
             String email) {
                 super(nome, registroProfissional, telefone, email);
             }
+    public void registrarConsulta(ConsultaRotina consulta) {
+        if (consulta == null) {
+            throw new IllegalArgumentException("A consulta não pode ser nula.");
+        }
+
+        consulta.setProfissionalResponsavel(this);
+
+        if (!consulta.validarCondicoes()) {
+            consulta.setProfissionalResponsavel(null);
+            throw new IllegalArgumentException("Consulta inválida.");
+        }
+    }
+    public void atenderEspecialidade(ConsultaEspecializada consulta) {
+        if (consulta == null) {
+            throw new IllegalArgumentException("A consulta não pode ser nula.");
+        }
+
+        consulta.setProfissionalResponsavel(this);
+
+        if (!consulta.validarCondicoes()) {
+            consulta.setProfissionalResponsavel(null);
+            throw new IllegalArgumentException("Consulta especializada inválida.");
+        }
+    }
     
 }

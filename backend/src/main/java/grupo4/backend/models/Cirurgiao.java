@@ -13,6 +13,19 @@ public class Cirurgiao extends ProfissionalSaude {
         this.areaAtuacaoCirurgica = areaAtuacaoCirurgica;
     }
 
+    public void registrarProcedimento(ProcedimentoCirurgico procedimento) {
+        if (procedimento == null) {
+            throw new IllegalArgumentException("O procedimento não pode ser nulo.");
+        }
+
+        procedimento.setCirurgiaoResponsavel(this);
+
+        if (!procedimento.validarCondicoes()) {
+            procedimento.setCirurgiaoResponsavel(null);
+            throw new IllegalArgumentException("Procedimento inválido.");
+        }
+    }
+
     public String getAreaAtuacao() {
         return areaAtuacaoCirurgica;
     }

@@ -12,23 +12,38 @@ public class Paciente {
     private String email;
     private String cpf;
     private LocalDate dataNascimento;
-    @OneToOne 
-    @JoinColumn (name = "endereco_id")
+    @OneToOne(cascade = {
+    CascadeType.PERSIST,
+    CascadeType.MERGE
+    })
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
-    @OneToOne
+
+    @OneToOne(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
     @JoinColumn(name = "historico_id")
     private HistoricoMedico historico;
-    protected Paciente(){
 
-    }
-    
-    public Paciente(String nome, String telefone, String email, String cpf, LocalDate dataNascimento, Endereco endereco, HistoricoMedico historico) {
+protected Paciente() {}
+
+    public Paciente(
+            String nome,
+            String telefone,
+            String email,
+            String cpf,
+            LocalDate dataNascimento,
+            Endereco endereco,
+            HistoricoMedico historico) {
+
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;    
+        this.dataNascimento = dataNascimento;
         this.endereco = endereco;
+        this.historico = historico;
     }
     public int calcularIdade() {
         if (dataNascimento == null) {

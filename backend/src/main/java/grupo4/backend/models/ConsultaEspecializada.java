@@ -37,6 +37,11 @@ public class ConsultaEspecializada extends Consulta {
 
         this.especialidade = especialidade;
         setPaciente(paciente);
+        if (!validarCondicoes()) {
+        throw new IllegalArgumentException(
+            "Dados inválidos para consulta especializada."
+        );
+    }
     }
 
     @Override

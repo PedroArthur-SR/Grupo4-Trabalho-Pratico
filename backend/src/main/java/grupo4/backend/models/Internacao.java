@@ -57,12 +57,7 @@ public class Internacao {
             );
         }
 
-        if (!quarto.possuiVaga()) {
-            throw new IllegalStateException("O quarto está sem vagas.");
-        }
-
         quarto.adicionarInternacao(this);
-        quarto.ocupar();
     }
 
     public void registrarAlta(LocalDate data) {
@@ -139,8 +134,7 @@ public class Internacao {
         return profissionalResponsavel;
     }
 
-    public void setProfissionalResponsavel(
-            ProfissionalSaude profissionalResponsavel) {
+    public void setProfissionalResponsavel(ProfissionalSaude profissionalResponsavel) {
         this.profissionalResponsavel = profissionalResponsavel;
     }
 

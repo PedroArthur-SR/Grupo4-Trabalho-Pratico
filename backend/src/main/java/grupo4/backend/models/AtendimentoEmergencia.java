@@ -44,12 +44,17 @@ public class AtendimentoEmergencia extends Atendimento {
         this.profissionalResponsavel = profissionalResponsavel;
 
         setPaciente(paciente);
+        if (!validarCondicoes()) {
+        throw new IllegalArgumentException(
+            "Dados inválidos para atendimento de emergência."
+        );
+    }
     }
 
     public void iniciarAtendimento() {
-        if (statusEmergencia != StatusEmergencia.AGUARDANDO) {
+        if (!statusEmergencia.podeMudarPara(StatusEmergencia.INICIADO)) {
             throw new IllegalStateException(
-                "O atendimento não está aguardando."
+                "Não foi possível iniciar o atendimento."
             );
         }
 
@@ -57,9 +62,9 @@ public class AtendimentoEmergencia extends Atendimento {
     }
 
     public void concluirAtendimento() {
-        if (statusEmergencia != StatusEmergencia.INICIADO) {
+        if (!statusEmergencia.podeMudarPara(StatusEmergencia.CONCLUIDO)) {
             throw new IllegalStateException(
-                "O atendimento precisa estar iniciado para ser concluído."
+                "Não foi possível concluir o atendimento."
             );
         }
 

@@ -37,6 +37,10 @@ public class Quarto {
     protected Quarto() {}
 
     public Quarto(int numero, int andar, int capacidadeMaxima, TipoQuarto tipo) {
+        if (numero <= 0 || andar < 0 || capacidadeMaxima <= 0 || tipo == null) {
+            throw new IllegalArgumentException("Dados inválidos para cadastrar o quarto.");
+        }
+
         this.numero = numero;
         this.andar = andar;
         this.capacidadeMaxima = capacidadeMaxima;
@@ -52,11 +56,25 @@ public class Quarto {
         return ocupacaoAtual < capacidadeMaxima;
     }
 
-    public void ocupar() {
+    public void adicionarInternacao(Internacao internacao) {
+        if (internacao == null) {
+            throw new IllegalArgumentException("A internação não pode ser nula.");
+        }
+
+        if (internacoes.contains(internacao)) {
+            throw new IllegalStateException("Esta internação já está associada ao quarto.");
+        }
+
         if (!possuiVaga()) {
             throw new IllegalStateException("O quarto está sem vagas.");
         }
 
+        if (internacao.getQuarto() != null && internacao.getQuarto() != this) {
+            throw new IllegalStateException("A internação já está associada a outro quarto.");
+        }
+
+        internacao.setQuarto(this);
+        internacoes.add(internacao);
         situacao = SituacaoQuarto.OCUPADO;
     }
 
@@ -70,10 +88,6 @@ public class Quarto {
         } else {
             situacao = SituacaoQuarto.OCUPADO;
         }
-    }
-
-    public void adicionarInternacao(Internacao internacao) {
-        internacoes.add(internacao);
     }
 
     public int getId() {

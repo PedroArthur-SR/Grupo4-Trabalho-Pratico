@@ -1,5 +1,9 @@
 package grupo4.backend.models;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalTime;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class ProfissionalSaude {
@@ -11,6 +15,8 @@ public abstract class ProfissionalSaude {
     private String telefone;
     private String email;
 
+    @OneToMany (mappedBy = "profissional")
+    private List<Disponibilidade> disponibilidades = new ArrayList<>();
     protected ProfissionalSaude() {
     }
 
@@ -24,13 +30,19 @@ public abstract class ProfissionalSaude {
         this.telefone = telefone;
         this.email = email;
     }
+    public boolean estaDisponivel(LocalDate data, LocalTime horario) {
+        if (data == null || horario == null) {
+            return false;
+        }
+
+        return disponibilidades.stream().anyMatch(disponibilidade ->
+            disponibilidade.getDiaSemana() == data.getDayOfWeek()
+            && disponibilidade.contem(horario)
+        );
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {

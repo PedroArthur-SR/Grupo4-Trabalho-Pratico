@@ -28,6 +28,11 @@ public class ConsultaRotina extends Consulta {
         );
 
         setPaciente(paciente);
+        if (!validarCondicoes()) {
+        throw new IllegalArgumentException(
+            "Dados inválidos para consulta de rotina."
+    );
+}
     }
 
      @Override
