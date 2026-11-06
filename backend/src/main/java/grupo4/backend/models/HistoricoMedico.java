@@ -8,6 +8,8 @@ import jakarta.persistence.*;
 
 @Entity
 public class HistoricoMedico {
+    @OneToOne(mappedBy = "historico")
+    private Paciente paciente;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,5 +41,11 @@ public class HistoricoMedico {
     public void setInformacoesRelevantes(
             List<String> informacoesRelevantes) {
         this.informacoesRelevantes = informacoesRelevantes;
+    }
+    public Paciente getPaciente() {
+        return paciente;
+    }
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 }

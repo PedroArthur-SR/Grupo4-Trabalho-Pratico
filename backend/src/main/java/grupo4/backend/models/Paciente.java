@@ -7,8 +7,6 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @OneToOne(mappedBy = "historico")
-    private Paciente paciente;
     private String nome;
     private String telefone;
     private String email;
@@ -125,8 +123,5 @@ protected Paciente() {}
         this.historico = historico;
     }    
     
-    public Paciente getPaciente() {
-        return paciente;
-    }
 }
 
